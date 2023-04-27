@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.banner {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(background.jpg);
+    background-size: cover;
+    background-position: center;  
+}
+.bannerl {
+    width: 100%;
+    min-height: 150vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(background.jpg);
+    background-size: cover;
+    background-position: center;  
+}
+.bannerxl {
+    min-height: 550vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(background.jpg);
+    background-size: cover;
+    background-position: center;  
+    max-width: 100%;
+}
+.bannerxxl {
+    min-height: 600vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(background.jpg);
+    background-size: cover;
+    background-position: center;  
+    max-width: 100%;
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+}  
+.logo{
+    width: 500px;
+    cursor: pointer;
+} 
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+.content p{
+    font-size: 20px;
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: #000;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+.contentA{
+    width: 100%;
+    position: absolute;
+    color: #fff;
+}
+.contentA h1{
+    text-align: center;
+    font-size: 70px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.contentA h2{
+    text-align: center;
+    font-size: 45px;
+}
+.contentA p{
+    transform: translateX(10%);
+    text-align: left;
+    font-size: 30px;
+    font-weight: 100;
+    line-height: 1.5;
+    min-width: 10%;
+    max-width: 80%;
+    width:  auto;
+}
+.resbutton{
+    width: 100%;
+    position: absolute;
+    top: 75%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+.contentB{
+    width: 100%;
+    position: absolute;
+    color: #fff;
+}
+.contentB h1{
+    text-align: center;
+    font-size: 60px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+.contentB h2{
+    text-align: center;
+    font-size: 30px;
+}
+.contentB h3{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 25px;
+}
+.contentB p{
+    text-align: left;
+    transform: translateX(5%);
+    font-size: 25px;
+    font-weight: 100;
+    line-height: 1.5;
+    min-width: 10%;
+    max-width: 90%;
+    width:  auto;
+}
+.contentC{
+    width: 100%;
+    position: absolute;
+    color: #fff;
+}
+.contentC h1{
+    text-align: center;
+    font-size: 60px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    max-width: 100%;
+}
+.contentC h2{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+    max-width: 100%;
+}
+.contentC h3{
+    text-align: left;
+    transform: translateX(5%);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    max-width: 90%;
+}
+.contentC p{
+    text-align: left;
+    transform: translateX(5%);
+    font-size: 25px;
+    font-weight: 100;
+    line-height: 1.5;
+    min-width: 10%;
+    max-width: 90%;
+    width:  auto;
+}
+.contentC img{
+    margin-top: 30px;
+    margin-left: 15%;
+    position: relative;
+    margin-bottom: 35px;
+}
