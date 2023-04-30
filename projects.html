@@ -126,240 +126,6 @@
         <br />
       </p>
       <h2>C++ Projects</h2>
-      <h3>Longest Palindrome</h3>
-      <p>
-        A palindrome is any word that remains the same after reversing it and
-        ignoring the case. For example: 'Did', '01-!-10', 'x'. This program
-        takes in text from standard input which contains any number of words
-        separated by whitespace. The output of the program will be the longest
-        palindrome found in the text. In case of ties, the program will output
-        the first longest palindrome found.
-        <br />
-        <br />
-        Program:
-        <a
-          href="https://github.com/li-dominic/projects/blob/main/fast-pali.cpp"
-          target="_blank"
-          rel="noopener noreferrer"
-          >fast-pali.cpp</a
-        >
-        | efficiency: 2 GB input finished under 30 seconds
-        <br />
-        <br />
-      </p>
-      <h3>Recursive Directory Scan</h3>
-      <p>
-        This program is given a current directory that will be recursively
-        scanned through to collect certain data. The program takes in a number
-        (N) from standard input, along with the "current" directory location.
-        The program then recursively collects the following data: the largest
-        file name, largest file size, number of files and directories, total
-        size of all files found, the N most common words from text files, all
-        top level vacant directories, and the largest images including their
-        names and pixel sizes.
-        <br />
-        <br />
-        Top level vacant directories are specified by the furthest vacant
-        directory. For example, given directory exm, if a subdirectory exb is
-        vacant, so that exm/exb is vacant, the program will only take exm as a
-        top level vacant directory. The same applies for any magnitude of vacant
-        directories.
-        <br />
-        <br />
-        Program:
-        <a
-          href="https://github.com/li-dominic/projects/blob/main/analyzeDir.cpp"
-          target="_blank"
-          rel="noopener noreferrer"
-          >analyzeDir.cpp</a
-        >
-        | efficiency: should outperform the equivalent Python program
-        <a
-          href="https://github.com/li-dominic/projects/blob/main/analyzeDir.py"
-          target="_blank"
-          rel="noopener noreferrer"
-          >analyzeDir.py</a
-        >
-        <br />
-        <br />
-      </p>
-      <h3>Calculating Pi (&#8508;)</h3>
-      <p>
-        The purpose of this project was to take original single-threaded code
-        and converting it to a multi-threaded implementation. The constraints of
-        this project was to only create and join threads, I was not allowed to
-        use any semaphores or mutexes.
-        <br />
-        <br />
-        The program takes in two command line arguments, radius, and n_threads,
-        where radius defines the precision and how much summation is needed to
-        be done, and n_threads is the number of threads the user would like to
-        execute the program with. Note (0 <= radius <= 100,000, 1 <= n_threads
-        <= 256). The program is based on the algorithm described
-        <a
-          href="https://en.wikipedia.org/wiki/Approximations_of_%CF%80#Summing_a_circle's_area"
-          target="_blank"
-          rel="noopener noreferrer"
-          >here</a
-        >.
-        <br />
-        <br />
-        Program:
-        <a
-          href="https://github.com/li-dominic/projects/blob/main/calcipi.cpp"
-          target="_blank"
-          rel="noopener noreferrer"
-          >calcpi.cpp</a
-        >
-        | efficiency: up to approximately N times speedup on a computer with N
-        physical cores (depending on processor)
-        <br />
-        <br />
-      </p>
-      <h3>Detecting Primes</h3>
-      <p>
-        The purpose of this project was to implement a multi-threaded
-        implementation that reads numbers from standard input and outputs any
-        numbers that are prime. The program takes in one command line argument
-        n_threads which is the number of threads to be used while executing.
-        <br />
-        <br />
-        This algorithm divides the given number by every number up to the square
-        root, this takes extremely long unless it is parallelized. My program
-        will divide that division up between all threads so that it may be done
-        simultaneously and also take advantage of thread re-use so that it is
-        not constantly creating and destroying threads. I also implemented
-        thread cancellation, so that the divisions stop across all threads as
-        soon as a divisor is found. The most efficient solution I found is to
-        only use barriers to protect access and updates to shared variables.
-        <br />
-        <br />
-        Again, this program assumes 1 <= n_threads <= 256 and the input numbers
-        are between [2, (2^63) - 2].
-        <br />
-        <br />
-        Program:
-        <a
-          href="https://github.com/li-dominic/projects/blob/main/detectPrimes.cpp"
-          target="_blank"
-          rel="noopener noreferrer"
-          >detectPrimes.cpp</a
-        >
-        | efficiency: up to approximately N times speedup on a computer with N
-        physical cores (depending on processor)
-        <br />
-        <br />
-      </p>
-      <h3>Deadlock Detector</h3>
-      <p>
-        A deadlock is defined as a situation where two or more processes are
-        unable to continue executing because they are waiting for each other to
-        release resources that they need in order to proceed. My program will
-        take in data from standard input and find if there is a deadlock, once
-        the very first deadlock is found, the program exits and prints the
-        results, which is the index or line of text that it was on from the
-        input, as well as the process names (procs) that are causing the
-        deadlock. If no deadlock is found, it will report index = -1 and procs =
-        [].
-        <br />
-        <br />
-        This program takes in text from standard input where each line is of the
-        following format: process -> resource, or process <- resource. The
-        separation is any number of whitespace. Note that <- represents an
-        assignment edge and -> is a request edge.
-        <br />
-        <br />
-        The following constraints is that; both process and resource names will
-        only contain alphanumeric characters and be at most 40 characters long.
-        The number of edges/lines will be ranging from [0, 30,000].
-        <br />
-        <br />
-        Program:
-        <a
-          href="https://github.com/li-dominic/projects/blob/main/find_deadlock.cpp"
-          target="_blank"
-          rel="noopener noreferrer"
-          >find_deadlock.cpp</a
-        >
-        | efficiency: finish under 10 seconds for all test cases under the above
-        constraints
-        <br />
-        <br />
-      </p>
-      <h3>CPU Scheduler Simulator</h3>
-      <p>
-        This project implements a round-robin CPU scheduling simulator. The
-        program takes a set of processes, arrival times, and time slices from
-        standard input and calculates the start and finish time. Furthermore,
-        the program tracks the condensed sequence length to be outputted as
-        well. From the command line, it takes two arguments, the quantum which
-        is the amount of time the CPU will try to schedule for each process, and
-        the max_seq_len, which is the maximum length of the sequence to be
-        tracked.
-        <br />
-        <br />
-        My program utilizes a job and ready queue, as well as the current time
-        and the remaining bursts of all processes. The optimizations applied to
-        this project that makes it as efficient as possible is that it skips the
-        current time to the maximum possible time that it can whenever possible.
-        <br />
-        <br />
-        Input constraints: <br />
-        - The processes are sorted by their arrival time, in ascending order.
-        <br />
-        - All arrival times will be non-negative, and all burst times are
-        greater than 0. <br />
-        - Process IDs will be consecutively numbered, starting at 0. <br />
-        - All processes are 100% CPU-bound. <br />
-        - Number of processes will be between 0 and 30. <br />
-        - Time slice and CPU bursts will be integers between 1 and 2^62.
-        <br />
-        - Process arrival times will be integers between 0 and 2^62. <br />
-        - The finish time of every process will fit into an int64_t.
-        <br />
-        <br />
-        Program:
-        <a
-          href="https://github.com/li-dominic/projects/blob/main/scheduler.cpp"
-          target="_blank"
-          rel="noopener noreferrer"
-          >scheduler.cpp</a
-        >
-        | efficiency: finish under 10 seconds for all test cases under the above
-        constraints
-        <br />
-        <br />
-      </p>
-      <h3>File Allocation Table (FAT) Checker</h3>
-      <p>
-        A file allocation table is a simple file system used by early operating
-        systems. A corrupted FAT contains a chain that is an infinite loop, a
-        FAT that is not corrupted does not contain a looped chain. My program
-        will use a depth-first-search (DFS) traversal method to identify the
-        longest block chain present. The program will output the starting node
-        of the longest chain. If there are many chains of the same longest
-        length, it will output all of them.
-        <br />
-        <br />
-        The program takes in an FAT from standard input in the form of numbers
-        delimited by whitespace. For example, {6 12 7...} represents that the
-        next pointer of block '0' is block '6', and the next pointer of block
-        '1' is block '12'. The only input constraint is that the number of
-        entries in the file allocation table is in the range of [1, 10,000,000].
-        <br />
-        <br />
-        Program:
-        <a
-          href="https://github.com/li-dominic/projects/blob/main/fatsim.cpp"
-          target="_blank"
-          rel="noopener noreferrer"
-          >fatsim.cpp</a
-        >
-        | efficiency: O(n) complexity - 10 million FAT entries under 10 seconds
-        or 1 million entries under 1 second
-        <br />
-        <br />
-      </p>
       <h3>Worst-fit Dynamic Partition Simulator</h3>
       <p>
         This project simulates a worst-fit dynamic partition memory allocation
@@ -416,6 +182,245 @@
           >memsim.cpp</a
         >
         | efficiency: O(nlogn) complexity - 1 million requests under 10 seconds
+        <br />
+        <br />
+      </p>
+      <h3>File Allocation Table (FAT) Checker</h3>
+      <p>
+        A file allocation table is a simple file system used by early operating
+        systems. A corrupted FAT contains a chain that is an infinite loop, a
+        FAT that is not corrupted does not contain a looped chain. My program
+        will use a depth-first-search (DFS) traversal method to identify the
+        longest block chain present. The program will output the starting node
+        of the longest chain. If there are many chains of the same longest
+        length, it will output all of them.
+        <br />
+        <br />
+        The program takes in an FAT from standard input in the form of numbers
+        delimited by whitespace. For example, {6 12 7...} represents that the
+        next pointer of block '0' is block '6', and the next pointer of block
+        '1' is block '12'. The only input constraint is that the number of
+        entries in the file allocation table is in the range of [1, 10,000,000].
+        <br />
+        <br />
+        Program:
+        <a
+          href="https://github.com/li-dominic/projects/blob/main/fatsim.cpp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >fatsim.cpp</a
+        >
+        | efficiency: O(n) complexity - 10 million FAT entries under 10 seconds
+        or 1 million entries under 1 second
+        <br />
+        <br />
+      </p>
+      <h3>CPU Scheduler Simulator</h3>
+      <p>
+        This project implements a round-robin CPU scheduling simulator. The
+        program takes a set of processes, arrival times, and time slices from
+        standard input and calculates the start and finish time. Furthermore,
+        the program tracks the condensed sequence length to be outputted as
+        well. From the command line, it takes two arguments, the quantum which
+        is the amount of time the CPU will try to schedule for each process, and
+        the max_seq_len, which is the maximum length of the sequence to be
+        tracked.
+        <br />
+        <br />
+        My program utilizes a job and ready queue, as well as the current time
+        and the remaining bursts of all processes. The optimizations applied to
+        this project that makes it as efficient as possible is that it skips the
+        current time to the maximum possible time that it can whenever possible.
+        <br />
+        <br />
+        Input constraints: <br />
+        - The processes are sorted by their arrival time, in ascending order.
+        <br />
+        - All arrival times will be non-negative, and all burst times are
+        greater than 0. <br />
+        - Process IDs will be consecutively numbered, starting at 0. <br />
+        - All processes are 100% CPU-bound. <br />
+        - Number of processes will be between 0 and 30. <br />
+        - Time slice and CPU bursts will be integers between 1 and 2^62.
+        <br />
+        - Process arrival times will be integers between 0 and 2^62. <br />
+        - The finish time of every process will fit into an int64_t.
+        <br />
+        <br />
+        Program:
+        <a
+          href="https://github.com/li-dominic/projects/blob/main/scheduler.cpp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >scheduler.cpp</a
+        >
+        | efficiency: finish under 10 seconds for all test cases under the above
+        constraints
+        <br />
+        <br />
+      </p>
+      <h3>Deadlock Detector</h3>
+      <p>
+        A deadlock is defined as a situation where two or more processes are
+        unable to continue executing because they are waiting for each other to
+        release resources that they need in order to proceed. My program will
+        take in data from standard input and find if there is a deadlock, once
+        the very first deadlock is found, the program exits and prints the
+        results, which is the index or line of text that it was on from the
+        input, as well as the process names (procs) that are causing the
+        deadlock. If no deadlock is found, it will report index = -1 and procs =
+        [].
+        <br />
+        <br />
+        This program takes in text from standard input where each line is of the
+        following format: process -> resource, or process <- resource. The
+        separation is any number of whitespace. Note that <- represents an
+        assignment edge and -> is a request edge.
+        <br />
+        <br />
+        The following constraints is that; both process and resource names will
+        only contain alphanumeric characters and be at most 40 characters long.
+        The number of edges/lines will be ranging from [0, 30,000].
+        <br />
+        <br />
+        Program:
+        <a
+          href="https://github.com/li-dominic/projects/blob/main/find_deadlock.cpp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >find_deadlock.cpp</a
+        >
+        | efficiency: finish under 10 seconds for all test cases under the above
+        constraints
+        <br />
+        <br />
+      </p>
+      <h3>Detecting Primes</h3>
+      <p>
+        The purpose of this project was to implement a multi-threaded
+        implementation that reads numbers from standard input and outputs any
+        numbers that are prime. The program takes in one command line argument
+        n_threads which is the number of threads to be used while executing.
+        <br />
+        <br />
+        This algorithm divides the given number by every number up to the square
+        root, this takes extremely long unless it is parallelized. My program
+        will divide that division up between all threads so that it may be done
+        simultaneously and also take advantage of thread re-use so that it is
+        not constantly creating and destroying threads. I also implemented
+        thread cancellation, so that the divisions stop across all threads as
+        soon as a divisor is found. The most efficient solution I found is to
+        only use barriers to protect access and updates to shared variables.
+        <br />
+        <br />
+        Again, this program assumes 1 <= n_threads <= 256 and the input numbers
+        are between [2, (2^63) - 2].
+        <br />
+        <br />
+        Program:
+        <a
+          href="https://github.com/li-dominic/projects/blob/main/detectPrimes.cpp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >detectPrimes.cpp</a
+        >
+        | efficiency: up to approximately N times speedup on a computer with N
+        physical cores (depending on processor)
+        <br />
+        <br />
+      </p>
+      <h3>Calculating Pi (&#8508;)</h3>
+      <p>
+        The purpose of this project was to take original single-threaded code
+        and converting it to a multi-threaded implementation. The constraints of
+        this project was to only create and join threads, I was not allowed to
+        use any semaphores or mutexes.
+        <br />
+        <br />
+        The program takes in two command line arguments, radius, and n_threads,
+        where radius defines the precision and how much summation is needed to
+        be done, and n_threads is the number of threads the user would like to
+        execute the program with. Note (0 <= radius <= 100,000, 1 <= n_threads
+        <= 256). The program is based on the algorithm described
+        <a
+          href="https://en.wikipedia.org/wiki/Approximations_of_%CF%80#Summing_a_circle's_area"
+          target="_blank"
+          rel="noopener noreferrer"
+          >here</a
+        >.
+        <br />
+        <br />
+        Program:
+        <a
+          href="https://github.com/li-dominic/projects/blob/main/calcipi.cpp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >calcpi.cpp</a
+        >
+        | efficiency: up to approximately N times speedup on a computer with N
+        physical cores (depending on processor)
+        <br />
+        <br />
+      </p>
+      <h3>Recursive Directory Scan</h3>
+      <p>
+        This program is given a current directory that will be recursively
+        scanned through to collect certain data. The program takes in a number
+        (N) from standard input, along with the "current" directory location.
+        The program then recursively collects the following data: the largest
+        file name, largest file size, number of files and directories, total
+        size of all files found, the N most common words from text files, all
+        top level vacant directories, and the largest images including their
+        names and pixel sizes.
+        <br />
+        <br />
+        Top level vacant directories are specified by the furthest vacant
+        directory. For example, given directory exm, if a subdirectory exb is
+        vacant, so that exm/exb is vacant, the program will only take exm as a
+        top level vacant directory. The same applies for any magnitude of vacant
+        directories.
+        <br />
+        <br />
+        Program:
+        <a
+          href="https://github.com/li-dominic/projects/blob/main/analyzeDir.cpp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >analyzeDir.cpp</a
+        >
+        | efficiency: should outperform the equivalent Python program
+        <a
+          href="https://github.com/li-dominic/projects/blob/main/analyzeDir.py"
+          target="_blank"
+          rel="noopener noreferrer"
+          >analyzeDir.py</a
+        >
+        <br />
+        <br />
+      </p>
+      <h3>Longest Palindrome</h3>
+      <p>
+        A palindrome is any word that remains the same after reversing it and
+        ignoring the case. For example: 'Did', '01-!-10', 'x'. This program
+        takes in text from standard input which contains any number of words
+        separated by whitespace. The output of the program will be the longest
+        palindrome found in the text. In case of ties, the program will output
+        the first longest palindrome found.
+        <br />
+        <br />
+        Program:
+        <a
+          href="https://github.com/li-dominic/projects/blob/main/fast-pali.cpp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >fast-pali.cpp</a
+        >
+        | efficiency: 2 GB input finished under 30 seconds
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <br />
